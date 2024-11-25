@@ -6,9 +6,17 @@
 // NOTE: You can NOT use the array.flat() method in your code
 
 export function flatArrays(array) {
-  // Your code goes here...
-
+  var flatArray = [];
+  for (var i = 0; i < array.length; i++) {
+    if (Array.isArray(array[i])) {
+      flatArray = flatArray.concat(array[i]); 
+    } else {
+      flatArray.push(array[i]);
+    }
+  }
+  return flatArray;
 }
+
 
 
 

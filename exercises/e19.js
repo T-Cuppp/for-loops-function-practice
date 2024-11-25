@@ -5,8 +5,14 @@
 // NOTE: You can NOT use the array.reverse() method in your code
 
 export function reverseArray(array) {
-  // Your code goes here...
-
+  var i = 0;
+  var x = array.length - 1;
+  for (i = 0; i < array.length / 2; i++, x--) {
+    var flipArray = array[i];
+    array[i] = array[x];
+    array[x] = flipArray;
+  }
+  return array; 
 }
 
 
