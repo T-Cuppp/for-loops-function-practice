@@ -6,16 +6,20 @@
 // NOTE: You can NOT use the array.flat() method in your code
 
 export function flatArrays(array) {
-  var flatArray = [];
-  for (var i = 0; i < array.length; i++) {
-    if (Array.isArray(array[i])) {
-      flatArray = flatArray.concat(array[i]); 
-    } else {
-      flatArray.push(array[i]);
+  let flatArray = [];
+  for (let i = 0; i < array.length; i++) {
+    let arrayElem = array[i];
+    if (!Array.isArray(arrayElem)) {
+      flatArray.push(arrayElem);
+      continue;
+    }
+    for (let x = 0; x < arrayElem.length; x++) {
+      flatArray.push(arrayElem[x])
     }
   }
   return flatArray;
 }
+
 
 
 

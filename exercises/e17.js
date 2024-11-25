@@ -6,7 +6,7 @@
 // NOTE: You can NOT use the array.includes() method in your code
 
 export function doesArrayInclude(array, value) {
-  for (var item in array) {
+  for (let item in array) {
     if (array[item].valueOf() == value) {
       return true;
     }
